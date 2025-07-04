@@ -96,3 +96,7 @@ LINE 1: SELECT DISTINCT park_id FROM visitor_data ORDER BY park_id
 2025-07-04 14:51:54,799 - watchfiles.main - INFO - 1 change detected
 2025-07-04 14:52:12,303 - watchfiles.main - INFO - 1 change detected
 2025-07-04 14:54:17,860 - watchfiles.main - INFO - 2 changes detected
+2025-07-04 15:01:29,088 - watchfiles.main - INFO - 1 change detected
+2025-07-04 15:01:30,634 - watchfiles.main - INFO - 1 change detected
+2025-07-04 15:01:32,470 - watchfiles.main - INFO - 1 change detected
+2025-07-04 15:01:33,541 - watchfiles.main - INFO - 1 change detected

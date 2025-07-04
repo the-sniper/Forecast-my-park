@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Minimal Infrastructure for Forecast My Park - No RDS'
+
+Resources:
+  # ECS Cluster Only
+  ECSCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: forecast-my-park-cluster
+
+Outputs:
+  ECSCluster:
+    Description: ECS Cluster Name
+    Value: !Ref ECSCluster
+    Export:
+      Name: forecast-my-park-ECS-Cluster 

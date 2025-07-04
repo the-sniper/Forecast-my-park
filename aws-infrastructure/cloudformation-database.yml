@@ -1,0 +1,93 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Database for Forecast My Park'
+
+Resources:
+  # VPC for RDS
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: forecast-my-park-vpc
+
+  # Subnets in different AZs
+  PrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: us-east-1a
+      Tags:
+        - Key: Name
+          Value: forecast-my-park-private-subnet-1
+
+  PrivateSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: us-east-1b
+      Tags:
+        - Key: Name
+          Value: forecast-my-park-private-subnet-2
+
+  # DB Subnet Group
+  DBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Subnet group for RDS
+      SubnetIds:
+        - !Ref PrivateSubnet1
+        - !Ref PrivateSubnet2
+      Tags:
+        - Key: Name
+          Value: forecast-my-park-db-subnet-group
+
+  # Security Group for RDS
+  DBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for RDS
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          CidrIp: 10.0.0.0/16
+
+  # RDS Instance
+  Database:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBInstanceIdentifier: forecast-my-park-db
+      DBInstanceClass: db.t3.micro
+      Engine: postgres
+      EngineVersion: '15.7'
+      MasterUsername: postgres
+      MasterUserPassword: forecast123!
+      AllocatedStorage: 20
+      StorageType: gp2
+      VPCSecurityGroups:
+        - !Ref DBSecurityGroup
+      DBSubnetGroupName: !Ref DBSubnetGroup
+      PubliclyAccessible: false
+      BackupRetentionPeriod: 7
+      MultiAZ: false
+      StorageEncrypted: true
+      DeletionProtection: false
+
+Outputs:
+  DatabaseEndpoint:
+    Description: RDS instance endpoint
+    Value: !GetAtt Database.Endpoint.Address
+    Export:
+      Name: forecast-my-park-db-endpoint
+  
+  DatabasePort:
+    Description: RDS instance port
+    Value: !GetAtt Database.Endpoint.Port
+    Export:
+      Name: forecast-my-park-db-port 

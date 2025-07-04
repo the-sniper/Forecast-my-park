@@ -36,7 +36,7 @@ class EnhancedVisualizer:
                 data_samples.append(park_data.sample(min(100, len(park_data))))
         
         if not data_samples:
-            print("❌ No data available")
+            print("No data available")
             return None
         
         df = pd.concat(data_samples, ignore_index=True)
@@ -88,7 +88,7 @@ class EnhancedVisualizer:
         plt.savefig(output_path, dpi=300, bbox_inches='tight')
         plt.close()
         
-        print(f"✅ Overview saved: {output_path}")
+        print(f"Overview saved: {output_path}")
         return output_path
     
     def create_predictions_plot(self, park_code='ACAD', days_ahead=14):
@@ -138,11 +138,11 @@ class EnhancedVisualizer:
             plt.savefig(output_path, dpi=300, bbox_inches='tight')
             plt.close()
             
-            print(f"✅ Predictions saved: {output_path}")
+            print(f"Predictions saved: {output_path}")
             return output_path
             
         except Exception as e:
-            print(f"❌ Error creating predictions for {park_code}: {e}")
+            print(f"Error creating predictions for {park_code}: {e}")
             return None
     
     def generate_all(self):
@@ -177,7 +177,7 @@ def main():
     visualizer = EnhancedVisualizer()
     visualizer.generate_all()
     
-    print("\n✅ Visualization generation complete!")
+    print("\nVisualization generation complete!")
 
 if __name__ == "__main__":
     main() 

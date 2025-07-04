@@ -1,10 +1,61 @@
 # Documentation files
 *.md
 
-# Environment files
+# Environment files (contain sensitive info)
+aws.env
 .env
-.env.*
 .env.local
-.env.development
-.env.staging
 .env.production
+.env.staging
+
+# SSH Keys (never commit these!)
+*.pem
+*.key
+
+# Logs
+*.log
+logs/
+
+# Docker volumes
+docker-volumes/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.pytest_cache/
+
+# Node modules
+node_modules/
+.npm
+.yarn-integrity
+.next/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp

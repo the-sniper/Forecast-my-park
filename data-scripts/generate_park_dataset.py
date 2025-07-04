@@ -2,21 +2,16 @@
 """
 Forecast My Park - Comprehensive Dataset Generator
 
-🚀 ONE SCRIPT TO RULE THEM ALL! 🚀
-
-This comprehensive script provides everything needed to generate a complete 
+This script provides everything needed to generate a complete 
 park visitor dataset for ML forecasting:
 
-✅ Creates enhanced database schema (18 columns)
-✅ Generates 39,000+ records with rich features
-✅ 3.5+ years of data across 30+ parks
-✅ Weather, temporal, economic, and geographic factors
-✅ Production-ready for advanced ML forecasting
+Creates enhanced database schema (18 columns)
+Generates 39,000+ records with rich features
+3.5+ years of data across 30+ parks
+Weather, temporal, economic, and geographic factors
 
 Usage:
     python generate_park_dataset.py
-
-No other scripts needed - this does it all!
 """
 
 import os
@@ -375,33 +370,27 @@ def main():
     """Complete dataset generation pipeline - one script to rule them all!"""
     logger = setup_logging()
     
-    print("🚀 Forecast My Park - Comprehensive Dataset Generator")
-    print("=" * 65)
-    print("🎯 ONE SCRIPT TO RULE THEM ALL!")
-    print("🔧 Creating enhanced database schema...")
-    print("📊 Generating 39,000+ records with 18+ features...")
-    print("🏞️  Processing 30+ parks across all regions...")
-    print("🎯 Building production-ready ML dataset...")
-    print("=" * 65)
+    print("Forecast My Park - Comprehensive Dataset Generator")
+    print("Creating enhanced database schema...")
     
     try:
         # Step 1: Create enhanced schema
-        logger.info("🔧 Creating enhanced database schema...")
+        logger.info("Creating enhanced database schema...")
         if not create_enhanced_schema():
-            logger.error("❌ Failed to create enhanced schema")
+            logger.error("Failed to create enhanced schema")
             return False
-        logger.info("✅ Enhanced schema created successfully")
+        logger.info("Enhanced schema created successfully")
         
         # Step 2: Get park list
         parks = get_expanded_park_list()
-        logger.info(f"🎯 Selected {len(parks)} diverse parks for processing")
+        logger.info(f"Selected {len(parks)} diverse parks for processing")
         
         # Step 3: Generate comprehensive data
         start_date = datetime.date(2022, 1, 1)
         end_date = datetime.date.today()
         days_per_park = (end_date - start_date).days + 1
         
-        logger.info(f"📊 Generating {days_per_park} days per park ({start_date} to {end_date})")
+        logger.info(f"Generating {days_per_park} days per park ({start_date} to {end_date})")
         
         success_count = 0
         error_count = 0
@@ -412,7 +401,7 @@ def main():
             park_code = park_info['code']
             
             try:
-                logger.info(f"🏞️  Processing park {i+1}/{len(parks)}: {park_code}")
+                logger.info(f"Processing park {i+1}/{len(parks)}: {park_code}")
                 
                 # Generate data
                 df = generate_park_data(park_info, start_date, end_date)
@@ -421,48 +410,35 @@ def main():
                 if upsert_enhanced_data(df):
                     total_records += len(df)
                     success_count += 1
-                    logger.info(f"✅ {park_code}: {len(df)} records generated")
+                    logger.info(f"{park_code}: {len(df)} records generated")
                 else:
-                    logger.error(f"❌ Failed to save data for {park_code}")
+                    logger.error(f"Failed to save data for {park_code}")
                     error_count += 1
                     
             except Exception as e:
                 error_count += 1
-                logger.error(f"❌ Error processing {park_code}: {e}")
+                logger.error(f"Error processing {park_code}: {e}")
                 continue
         
         # Summary
         improvement_factor = total_records / 1500  # vs original 1,500 records
         
         logger.info("=" * 65)
-        logger.info("🎉 DATASET GENERATION COMPLETE!")
+        logger.info("DATASET GENERATION COMPLETE!")
         logger.info(f"   • Parks processed: {success_count}/{len(parks)}")
         logger.info(f"   • Total records: {total_records:,}")
         logger.info(f"   • Days per park: {days_per_park}")
         logger.info(f"   • Improvement: {improvement_factor:.1f}x more data")
-        logger.info(f"   • Rich features: Weather, holidays, economics, temporal")
         logger.info("=" * 65)
         
         if success_count == 0:
-            logger.error("❌ No parks processed successfully!")
+            logger.error("No parks processed successfully!")
             return False
-        
-        # Success message
-        print(f"\n🎉 SUCCESS! Generated {total_records:,} records for {success_count} parks!")
-        print("\nYour comprehensive dataset includes:")
-        print("  ✅ Enhanced database table with 18 columns")
-        print("  ✅ Weather factors (temperature, precipitation, conditions)")
-        print("  ✅ Temporal patterns (weekends, holidays, seasonality)")
-        print("  ✅ Economic factors (gas prices, travel costs)")
-        print("  ✅ Geographic diversity (5 regions, multiple park types)")
-        print("  ✅ 3.5+ years of data per park (2022-2025)")
-        print("  ✅ Production-ready for ML forecasting")
-        print("\n🚀 Your Prophet models now have professional-grade data!")
         
         return True
         
     except Exception as e:
-        logger.error(f"💥 Critical error in dataset generation: {e}")
+        logger.error(f"Critical error in dataset generation: {e}")
         return False
 
 if __name__ == "__main__":

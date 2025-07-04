@@ -1,0 +1,17 @@
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+README.md
+.env.local
+.env.development
+.env.staging
+.env.production
+.git
+.gitignore
+.next
+.eslintrc.json
+coverage
+.nyc_output
+.cache
+.vscode 

@@ -1,0 +1,96 @@
+{
+  "frontend": {
+    "family": "forecast-my-park-frontend",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "512",
+    "memory": "1024",
+    "executionRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+      {
+        "name": "frontend",
+        "image": "YOUR_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/forecast-my-park-frontend:latest",
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "protocol": "tcp"
+          }
+        ],
+        "environment": [
+          {
+            "name": "NODE_ENV",
+            "value": "production"
+          },
+          {
+            "name": "NEXT_PUBLIC_API_URL",
+            "value": "https://your-domain.com/api"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/forecast-my-park-frontend",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "essential": true
+      }
+    ]
+  },
+  "ml-service": {
+    "family": "forecast-my-park-ml-service",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "1024",
+    "memory": "2048",
+    "executionRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+      {
+        "name": "ml-service",
+        "image": "YOUR_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/forecast-my-park-ml-service:latest",
+        "portMappings": [
+          {
+            "containerPort": 8000,
+            "protocol": "tcp"
+          }
+        ],
+        "environment": [
+          {
+            "name": "DB_HOST",
+            "value": "your-rds-endpoint.amazonaws.com"
+          },
+          {
+            "name": "DB_PORT",
+            "value": "5432"
+          },
+          {
+            "name": "DB_NAME",
+            "value": "park_forecast"
+          }
+        ],
+        "secrets": [
+          {
+            "name": "DB_USER",
+            "valueFrom": "arn:aws:secretsmanager:us-east-1:YOUR_ACCOUNT_ID:secret:forecast-db-credentials:username::"
+          },
+          {
+            "name": "DB_PASSWORD",
+            "valueFrom": "arn:aws:secretsmanager:us-east-1:YOUR_ACCOUNT_ID:secret:forecast-db-credentials:password::"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/forecast-my-park-ml-service",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "essential": true
+      }
+    ]
+  }
+} 
