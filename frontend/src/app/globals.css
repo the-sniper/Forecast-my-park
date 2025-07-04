@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Enhanced map marker styling */
+.enhanced-park-marker {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transition: all 0.2s ease-in-out;
+}
+
+.enhanced-park-marker:hover {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+  transform: scale(1.1);
+}
+
+.animate-ping{
+  animation-duration: 2s;
+}
+
+/* Leaflet popup styling enhancement */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+.leaflet-popup-tip {
+  box-shadow: none !important;
+}
+
+/* Map container styling */
+.leaflet-container {
+  font-family: inherit !important;
+}
+
+/* Ensure z-index for overlays */
+.leaflet-control-container {
+  position: relative;
+  z-index: 500;
+}
+
+/* Custom scrollbar for predictions */
+.prediction-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.prediction-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.prediction-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.prediction-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Loading overlay animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loading-overlay {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Smooth transitions for map predictions */
+.map-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.mapDateSelection{
+  justify-content: space-between;
+}
+
+.selectedPark{
+  flex-wrap: wrap;
+}
+
+.selectedPark > div{
+  width: 100%;
+}
+
+.selectedPark .visitorStats{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+
+.selectedPark .visitorStats > div > span{
+  font-weight: 600;
+  display: block;
+}
+
+.disabledParkItem .parkItemInfo {
+  cursor: not-allowed;
+}
+
+.disabledParkItem .parkItemInfo > span{
+  color: #94a3b8;
+}

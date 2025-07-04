@@ -1,0 +1,98 @@
+2025-07-04 14:20:08,743 - __main__ - INFO - Starting ML Service...
+2025-07-04 14:20:23,758 - app.database - INFO - Found 30 parks in enhanced database
+2025-07-04 14:20:24,491 - app.model_trainer - INFO - Model loaded from models/prophet_model_ANTI.joblib
+2025-07-04 14:20:24,548 - app.database - INFO - Retrieved 1280 enhanced records for park ANTI
+2025-07-04 14:20:24,711 - app.model_trainer - INFO - Model loaded from models/prophet_model_ARCH.joblib
+2025-07-04 14:20:24,719 - app.database - INFO - Retrieved 1280 enhanced records for park ARCH
+2025-07-04 14:20:24,862 - app.model_trainer - INFO - Model loaded from models/prophet_model_ASIS.joblib
+2025-07-04 14:20:24,872 - app.database - INFO - Retrieved 1280 enhanced records for park ASIS
+2025-07-04 14:20:25,047 - app.model_trainer - INFO - Model loaded from models/prophet_model_BRCA.joblib
+2025-07-04 14:20:25,054 - app.database - INFO - Retrieved 1280 enhanced records for park BRCA
+2025-07-04 14:20:25,185 - app.model_trainer - INFO - Model loaded from models/prophet_model_BOST.joblib
+2025-07-04 14:20:25,194 - app.database - INFO - Retrieved 1280 enhanced records for park BOST
+2025-07-04 14:20:25,327 - app.model_trainer - INFO - Model loaded from models/prophet_model_CACO.joblib
+2025-07-04 14:20:25,337 - app.database - INFO - Retrieved 1280 enhanced records for park CACO
+2025-07-04 14:20:25,489 - app.model_trainer - INFO - Model loaded from models/prophet_model_CAHA.joblib
+2025-07-04 14:20:25,496 - app.database - INFO - Retrieved 1280 enhanced records for park CAHA
+2025-07-04 14:20:25,631 - app.model_trainer - INFO - Model loaded from models/prophet_model_BAND.joblib
+2025-07-04 14:20:25,640 - app.database - INFO - Retrieved 1280 enhanced records for park BAND
+2025-07-04 14:20:25,773 - app.model_trainer - INFO - Model loaded from models/prophet_model_CANY.joblib
+2025-07-04 14:20:25,781 - app.database - INFO - Retrieved 1280 enhanced records for park CANY
+2025-07-04 14:20:25,913 - app.model_trainer - INFO - Model loaded from models/prophet_model_CARE.joblib
+2025-07-04 14:20:25,922 - app.database - INFO - Retrieved 1280 enhanced records for park CARE
+2025-07-04 14:20:26,054 - app.model_trainer - INFO - Model loaded from models/prophet_model_ACAD.joblib
+2025-07-04 14:20:26,063 - app.database - INFO - Retrieved 1280 enhanced records for park ACAD
+2025-07-04 14:20:26,197 - app.model_trainer - INFO - Model loaded from models/prophet_model_COLO.joblib
+2025-07-04 14:20:26,205 - app.database - INFO - Retrieved 1280 enhanced records for park COLO
+2025-07-04 14:20:26,337 - app.model_trainer - INFO - Model loaded from models/prophet_model_CURE.joblib
+2025-07-04 14:20:26,346 - app.database - INFO - Retrieved 1280 enhanced records for park CURE
+2025-07-04 14:20:26,478 - app.model_trainer - INFO - Model loaded from models/prophet_model_DEVA.joblib
+2025-07-04 14:20:26,486 - app.database - INFO - Retrieved 1280 enhanced records for park DEVA
+2025-07-04 14:20:26,619 - app.model_trainer - INFO - Model loaded from models/prophet_model_GETT.joblib
+2025-07-04 14:20:26,627 - app.database - INFO - Retrieved 1280 enhanced records for park GETT
+2025-07-04 14:20:26,762 - app.model_trainer - INFO - Model loaded from models/prophet_model_GRCA.joblib
+2025-07-04 14:20:26,770 - app.database - INFO - Retrieved 1280 enhanced records for park GRCA
+2025-07-04 14:20:26,903 - app.model_trainer - INFO - Model loaded from models/prophet_model_GRSM.joblib
+2025-07-04 14:20:26,911 - app.database - INFO - Retrieved 1280 enhanced records for park GRSM
+2025-07-04 14:20:27,046 - app.model_trainer - INFO - Model loaded from models/prophet_model_JOTR.joblib
+2025-07-04 14:20:27,053 - app.database - INFO - Retrieved 1280 enhanced records for park JOTR
+2025-07-04 14:20:27,186 - app.model_trainer - INFO - Model loaded from models/prophet_model_YELL.joblib
+2025-07-04 14:20:27,193 - app.database - INFO - Retrieved 1280 enhanced records for park YELL
+2025-07-04 14:20:31,216 - app.database - INFO - Retrieved 1280 enhanced records for park ACAD
+2025-07-04 14:20:32,614 - app.database - INFO - Retrieved 1280 enhanced records for park ACAD
+2025-07-04 14:20:32,779 - app.database - INFO - Retrieved 1280 enhanced records for park ACAD
+2025-07-04 14:20:32,941 - app.database - INFO - Retrieved 1280 enhanced records for park ACAD
+2025-07-04 14:20:33,111 - app.database - INFO - Retrieved 1280 enhanced records for park ACAD
+2025-07-04 14:22:40,385 - __main__ - INFO - Starting ML Service...
+2025-07-04 14:24:29,351 - watchfiles.main - INFO - 1 change detected
+2025-07-04 14:24:30,318 - watchfiles.main - INFO - 3 changes detected
+2025-07-04 14:24:50,179 - __main__ - INFO - Starting ML Service...
+2025-07-04 14:25:15,109 - app.database - ERROR - Error fetching park list: (psycopg.errors.UndefinedTable) relation "visitor_data" does not exist
+LINE 1: SELECT DISTINCT park_id FROM visitor_data ORDER BY park_id
+                                     ^
+[SQL: SELECT DISTINCT park_id FROM visitor_data ORDER BY park_id]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-04 14:29:18,587 - __main__ - INFO - Starting ML Service...
+2025-07-04 14:50:04,321 - __main__ - INFO - Starting ML Service...
+2025-07-04 14:50:09,434 - app.database - INFO - Found 30 parks in enhanced database
+2025-07-04 14:50:09,618 - app.model_trainer - INFO - Model loaded from models/prophet_model_ACAD.joblib
+2025-07-04 14:50:09,653 - app.database - INFO - Retrieved 1281 enhanced records for park ACAD
+2025-07-04 14:50:09,809 - app.model_trainer - INFO - Model loaded from models/prophet_model_ANTI.joblib
+2025-07-04 14:50:09,818 - app.database - INFO - Retrieved 1281 enhanced records for park ANTI
+2025-07-04 14:50:09,956 - app.model_trainer - INFO - Model loaded from models/prophet_model_BRCA.joblib
+2025-07-04 14:50:09,964 - app.database - INFO - Retrieved 1281 enhanced records for park BRCA
+2025-07-04 14:50:10,097 - app.model_trainer - INFO - Model loaded from models/prophet_model_ARCH.joblib
+2025-07-04 14:50:10,104 - app.database - INFO - Retrieved 1281 enhanced records for park ARCH
+2025-07-04 14:50:10,238 - app.model_trainer - INFO - Model loaded from models/prophet_model_CACO.joblib
+2025-07-04 14:50:10,247 - app.database - INFO - Retrieved 1281 enhanced records for park CACO
+2025-07-04 14:50:10,380 - app.model_trainer - INFO - Model loaded from models/prophet_model_ASIS.joblib
+2025-07-04 14:50:10,389 - app.database - INFO - Retrieved 1281 enhanced records for park ASIS
+2025-07-04 14:50:10,531 - app.model_trainer - INFO - Model loaded from models/prophet_model_CAHA.joblib
+2025-07-04 14:50:10,540 - app.database - INFO - Retrieved 1281 enhanced records for park CAHA
+2025-07-04 14:50:10,693 - app.model_trainer - INFO - Model loaded from models/prophet_model_CANY.joblib
+2025-07-04 14:50:10,704 - app.database - INFO - Retrieved 1281 enhanced records for park CANY
+2025-07-04 14:50:10,833 - app.model_trainer - INFO - Model loaded from models/prophet_model_BAND.joblib
+2025-07-04 14:50:10,841 - app.database - INFO - Retrieved 1281 enhanced records for park BAND
+2025-07-04 14:50:10,975 - app.model_trainer - INFO - Model loaded from models/prophet_model_CARE.joblib
+2025-07-04 14:50:10,983 - app.database - INFO - Retrieved 1281 enhanced records for park CARE
+2025-07-04 14:50:11,115 - app.model_trainer - INFO - Model loaded from models/prophet_model_COLO.joblib
+2025-07-04 14:50:11,123 - app.database - INFO - Retrieved 1281 enhanced records for park COLO
+2025-07-04 14:50:11,256 - app.model_trainer - INFO - Model loaded from models/prophet_model_BOST.joblib
+2025-07-04 14:50:11,264 - app.database - INFO - Retrieved 1281 enhanced records for park BOST
+2025-07-04 14:50:11,400 - app.model_trainer - INFO - Model loaded from models/prophet_model_CURE.joblib
+2025-07-04 14:50:11,408 - app.database - INFO - Retrieved 1281 enhanced records for park CURE
+2025-07-04 14:50:11,541 - app.model_trainer - INFO - Model loaded from models/prophet_model_DEVA.joblib
+2025-07-04 14:50:11,548 - app.database - INFO - Retrieved 1281 enhanced records for park DEVA
+2025-07-04 14:50:11,681 - app.model_trainer - INFO - Model loaded from models/prophet_model_GETT.joblib
+2025-07-04 14:50:11,689 - app.database - INFO - Retrieved 1281 enhanced records for park GETT
+2025-07-04 14:50:11,826 - app.model_trainer - INFO - Model loaded from models/prophet_model_GRCA.joblib
+2025-07-04 14:50:11,833 - app.database - INFO - Retrieved 1281 enhanced records for park GRCA
+2025-07-04 14:50:11,966 - app.model_trainer - INFO - Model loaded from models/prophet_model_GRSM.joblib
+2025-07-04 14:50:11,974 - app.database - INFO - Retrieved 1281 enhanced records for park GRSM
+2025-07-04 14:50:12,108 - app.model_trainer - INFO - Model loaded from models/prophet_model_JOTR.joblib
+2025-07-04 14:50:12,114 - app.database - INFO - Retrieved 1281 enhanced records for park JOTR
+2025-07-04 14:50:12,249 - app.model_trainer - INFO - Model loaded from models/prophet_model_YELL.joblib
+2025-07-04 14:50:12,257 - app.database - INFO - Retrieved 1281 enhanced records for park YELL
+2025-07-04 14:51:54,799 - watchfiles.main - INFO - 1 change detected
+2025-07-04 14:52:12,303 - watchfiles.main - INFO - 1 change detected
+2025-07-04 14:54:17,860 - watchfiles.main - INFO - 2 changes detected
